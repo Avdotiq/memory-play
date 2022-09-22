@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import COVER_IMG from "../../../image/cover.jpg";
 
-function Cart({ url }) {
+function Card({ src }) {
     const [animation, setAnimation] = useState(false);
 
     return (
@@ -10,17 +10,17 @@ function Cart({ url }) {
             className={animation ? "move" : ""}
             onClick={() => setAnimation(animation ? false : true)}
         >
-            <StyledCart className="cart">
-                <StyledCartFace className="front"></StyledCartFace>
-                <StyledCartFace className="back">
-                    <img src={url} alt="" />
-                </StyledCartFace>
-            </StyledCart>
+            <StyledCard className="cart">
+                <StyledCardFace className="front"></StyledCardFace>
+                <StyledCardFace className="back">
+                    <img src={src} alt="" />
+                </StyledCardFace>
+            </StyledCard>
         </StyledScene>
     );
 }
 
-export default Cart;
+export default Card;
 
 const StyledScene = styled.div`
     width: 130px;
@@ -45,7 +45,7 @@ const StyledScene = styled.div`
     }
 `;
 
-const StyledCart = styled.div`
+const StyledCard = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
@@ -53,7 +53,7 @@ const StyledCart = styled.div`
     transition: transform 1s;
 `;
 
-const StyledCartFace = styled.div`
+const StyledCardFace = styled.div`
     display: flex;
     align-items: center;
     position: absolute;
@@ -69,5 +69,7 @@ const StyledCartFace = styled.div`
 
     &.back {
         transform: rotateY(180deg);
+        border-radius: 10px;
+        border: 1px solid #d2d2d2;
     }
 `;
