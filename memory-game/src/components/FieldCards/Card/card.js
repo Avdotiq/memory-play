@@ -1,19 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import COVER_IMG from "../../../image/cover.jpg";
 
-function Card({ src }) {
-    const [animation, setAnimation] = useState(false);
+function Card({ card, handleChoise, flipped }) {
+    const handleChange = () => {
+        handleChoise(card);
+    };
 
     return (
-        <StyledScene
-            className={animation ? "move" : ""}
-            onClick={() => setAnimation(animation ? false : true)}
-        >
+        <StyledScene className={flipped ? "move" : ""} onClick={handleChange}>
             <StyledCard className="cart">
                 <StyledCardFace className="front"></StyledCardFace>
                 <StyledCardFace className="back">
-                    <img src={src} alt="" />
+                    <img src={card.src} alt="" />
                 </StyledCardFace>
             </StyledCard>
         </StyledScene>
