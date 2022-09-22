@@ -1,11 +1,14 @@
-import "./App.css";
-import Feild from "./components/FieldCarts/Field";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Game from "./Pages/Game";
+import Rules from "./Pages/Rules";
 
 function App() {
     return (
-        <div className="App">
-            <Feild />
-        </div>
+        <Routes>
+            <Route path="/" element={<Rules />} />
+            <Route path="/game" element={<Game />} />
+        </Routes>
     );
 }
 
