@@ -10,3 +10,11 @@ body {
 * {
   box-sizing: border-box;
 }
+
+h1, h2, h3, p, ol, ul {
+  margin: 0;
+}
+
+h3, p, ol {
+  padding: 15px 0;
+}
