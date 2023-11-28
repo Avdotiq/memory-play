@@ -28,7 +28,7 @@ function Field({ cards }) {
                 setTimeout(() => reset(), 700);
             }
         }
-    }, [choiseOne, choiseTwo]);
+    });
 
     return (
         <StyledField>
